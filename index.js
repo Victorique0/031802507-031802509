@@ -74,7 +74,7 @@ function submit() {
 
         }
     }
-
+    //menu显示
     var menu = document.getElementById("menu");
     for(var item in teacher){
         if(teacher[item]["in_menu"]!=="true")
@@ -82,7 +82,10 @@ function submit() {
                 var new_node = document.createElement("div");
                 new_node.innerHTML = item;
                 new_node.setAttribute("id","menu_name");
-                new_node.setAttribute("onclick","add_teacher(this.innerHTML)");
+                new_node.setAttribute("onclick","menu_name_click(this.innerHTML,this)");
+                new_node.setAttribute("onmouseover","menu_name_over(this)");
+                new_node.setAttribute("onmouseout","menu_name_out(this)");
+                new_node.setAttribute("chose","no");
                 menu.appendChild(new_node);
                 teacher[item]["in_menu"] = "true";
             }
@@ -92,8 +95,17 @@ function submit() {
         tree.removeChild(tree.children[0]);
 }
 
+function menu_name_over(obj) {
+    if(obj.getAttribute("chose")==="no")
+        obj.setAttribute("style","background-color:orange;");
+}
 
-function add_teacher(name){
+function menu_name_out(obj) {
+    if(obj.getAttribute("chose")==="no")
+        obj.setAttribute("style","background-color:lightgoldenrodyellow;")
+}
+
+function menu_name_click(name,obj){
     var tree = document.getElementById("tree");
     while(tree.children.length!==0)
         tree.removeChild(tree.children[0]);
@@ -101,11 +113,22 @@ function add_teacher(name){
     var inner = document.createElement("div");
     inner.innerHTML = name;
     inner.setAttribute("onclick","ShowType(this)");
+    inner.setAttribute("id","teacher_name");
     new_teacher_node.appendChild(inner);
 
     new_teacher_node.setAttribute("id","teacher_area");
     new_teacher_node.setAttribute("name",name);
     tree.appendChild(new_teacher_node);
+
+    var menu_name = document.getElementById("menu").children;
+    console.log(menu_name);
+    for(var i = 0;i<menu_name.length;i++)
+        {
+            menu_name[i].setAttribute("style","background-color:lightgoldenrodyellow;");
+            menu_name[i].setAttribute("chose","no");
+        }
+    obj.setAttribute("style","background-color:red;");
+    obj.setAttribute("chose","yes;");
 }
 
 function ShowType(obj) {
@@ -193,7 +216,7 @@ function ShowSkill(obj) {
     else
     {
         obj.setAttribute("open","yes");
-        obj.setAttribute("style","border-left:aqua 5px solid");
+        obj.setAttribute("style","border-left:aqua 5px solid;");
         var skill_list = student[obj.innerHTML];
         if(!skill_list||skill_list.length===0)
             return;
