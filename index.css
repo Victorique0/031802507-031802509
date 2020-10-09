@@ -1,59 +1,68 @@
-
-#teacher{
-    //margin: 20px;
-    //border: red 5px solid;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-}
-
-#type{
-    margin: 20px;
-    //border: black 5px solid;
-}
-
-#stu{
-    margin: 20px;
-    //border: pink 5px solid;
-}
-
-#skill{
-    margin: 20px;
-    //border: orangered 5px solid;
-}
-
-
-
-#input{
-    position: absolute;
-    left:100px;
-    top: 50px;
-    width: 500px;
-    height: 600px;
-    //border: red 5px solid;
-}
-
 #tree{
     position: absolute;
-    right:100px;
-    top: 50px;
-    width: 500px;
-    height: 600px;
-    //border: aqua 5px solid;
+    left: 60%;
+    top: 10%;
+    width: 30%;
+    height: 30%;
 }
 
 #text{
     position: absolute;
-    left: 50px;
-    top: 50px;
-    width: 400px;
-    height: 400px;
+    left: 10%;
+    top: 10%;
+    width: 35%;
+    height: 30%;
 }
 
 #button{
     position: absolute;
-    right: 50px;
-    top: 500px;
-    width: 50px;
-    height: 30px;
+    left: 10%;
+    top: 50%;
+    width: 35%;
+    height: 5%;;
+}
+
+#menu_head{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 5%;
+    height: 2%;
+    //border: red solid 3px;
+}
+
+#menu{
+    position: absolute;
+    margin-top: 10px;
+    left: 50%;
+    top: 12%;
+    width: 5%;
+    height: 30%;
+    //border: aqua solid 3px;
+}
+
+#menu_name{
+    margin-top: 10px;
+}
+
+#teacher_area{
+    //margin-top: 10px;
+}
+
+#type{
+    margin: 5px;
+    position: relative;
+    left: 10px;
+}
+
+#student{
+    margin: 5px;
+    position: relative;
+    left: 20px;
+}
+
+#skill{
+    margin: 5px;
+    position: relative;
+    left: 30px;
 }
