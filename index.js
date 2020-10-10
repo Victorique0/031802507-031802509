@@ -11,7 +11,7 @@ function submit() {
             if(!teacher[teacher_name])
                 teacher[teacher_name] = {};
             i += 1;
-            while(list[i]!=="")
+            while(list[i]!==""&&i<list.length)
             {
                 //"级博士生："，"级硕士生："，"级本科生："
                 var stu_msg = list[i];
@@ -43,9 +43,21 @@ function submit() {
                         }
 
                 }
+                else{
+                    show_menu();
+                    alert("输入格式错误！\n若有多组输入，中间空一行。上半部分是人员信息，下半部分是技能树或所在公司历程。\n输入正确的部分已经记录完成")
+                    console.log(teacher);
+                    return;
+                }
                 i++;
             }
         }
+        else if(str.includes("级博士生：")||str.includes("级硕士生：")||str.includes("级本科生："))
+            {
+                show_menu();
+                alert("输入格式错误！\n人员信息和导师信息之间不能存在空行\n输入正确的部分已经记录完成");
+                return;
+            }
         else if(str.length)
         {
             var stu_name = str.substring(0,str.indexOf("："));
@@ -75,20 +87,25 @@ function submit() {
         }
     }
     //menu显示
+    show_menu();
+}
+
+function show_menu(){
+    //menu显示
     var menu = document.getElementById("menu");
     for(var item in teacher){
         if(teacher[item]["in_menu"]!=="true")
-            {
-                var new_node = document.createElement("div");
-                new_node.innerHTML = item;
-                new_node.setAttribute("id","menu_name");
-                new_node.setAttribute("onclick","menu_name_click(this.innerHTML,this)");
-                new_node.setAttribute("onmouseover","menu_name_over(this)");
-                new_node.setAttribute("onmouseout","menu_name_out(this)");
-                new_node.setAttribute("chose","no");
-                menu.appendChild(new_node);
-                teacher[item]["in_menu"] = "true";
-            }
+        {
+            var new_node = document.createElement("div");
+            new_node.innerHTML = item;
+            new_node.setAttribute("id","menu_name");
+            new_node.setAttribute("onclick","menu_name_click(this.innerHTML,this)");
+            new_node.setAttribute("onmouseover","menu_name_over(this)");
+            new_node.setAttribute("onmouseout","menu_name_out(this)");
+            new_node.setAttribute("chose","no");
+            menu.appendChild(new_node);
+            teacher[item]["in_menu"] = "true";
+        }
     }
     var tree = document.getElementById("tree");
     while(tree.children.length!==0)
