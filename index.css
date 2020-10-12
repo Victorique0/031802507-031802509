@@ -1,6 +1,10 @@
+body{ margin:0; padding:0;}
+#pic{ width:100%;}
+
+
 #main{
     position: absolute;
-    //border: aqua 5px solid;
+//border: aqua 5px solid;
     width: 100%;
     top: 10%;
 }
@@ -16,7 +20,7 @@
 }
 #input_head{
     text-align: center;
-    //border-top: gold 5px solid;
+//border-top: gold 5px solid;
     background-color: lightgoldenrodyellow;
 }
 #input_area{
@@ -26,6 +30,7 @@
 }
 #button{
     width: 100%;
+    margin-bottom: 29px;
 }
 
 #menu_head{
