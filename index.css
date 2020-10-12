@@ -1,19 +1,14 @@
 body{ margin:0; padding:0;}
 #pic{ width:100%;}
-
-
 #main{
     position: absolute;
 //border: aqua 5px solid;
     width: 100%;
     top: 10%;
 }
-
 #space{
     height: 29px;
 }
-
-
 #text{
     width: 100%;
     height: 290px;
@@ -21,62 +16,55 @@ body{ margin:0; padding:0;}
 #input_head{
     text-align: center;
 //border-top: gold 5px solid;
-    background-color: lightgoldenrodyellow;
+    background-color: lightsteelblue;
 }
 #input_area{
-    background-color: lightgoldenrodyellow;
-    border-top: gold 5px solid;
+    background-color: lightsteelblue;
+    border-top: blue 5px solid;
     margin: 2.6%;
 }
 #button{
     width: 100%;
     margin-bottom: 29px;
 }
-
 #menu_head{
     text-align: center;
 }
 #menu_area{
-    border-top: gold 5px solid;
-    background-color: lightgoldenrodyellow;
+    border-top: blue 5px solid;
+    background-color: lightsteelblue;
     margin: 2.6%;
 }
 #menu{
-    background-color: lightgoldenrodyellow;
+    background-color: lightsteelblue;
 }
-
 #menu_name{
     margin-bottom: 5px;
 }
-
-
 #tree_area{
-    background-color: lightgoldenrodyellow;
-    border-top: gold 5px solid;
+    background-color: lightsteelblue;
+    border-top: blue 5px solid;
     margin: 2.6%;
 }
 #tree_head{
     text-align: center;
-    background-color: lightgoldenrodyellow;
-}
+    background-color: lightsteelblue;
 
+}
 #teacher_name{
     position: relative;
     left: -15px;
 }
-
 #type{
     margin: 5px;
     position: relative;
     left: 29px;
 }
-
 #student{
     margin: 5px;
     position: relative;
     left: 29px;
 }
-
 #skill{
     margin: 5px;
     position: relative;
